@@ -1,0 +1,203 @@
+/* -------- CSS Reset / Base -------- */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b0d10;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-strong: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.12);
+  --text-primary: #f5f7fa;
+  --text-secondary: #a0a8b5;
+  --accent: #6cf2c2;
+  --accent-hover: #59ddb0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(
+    1200px 600px at top,
+    #141821 0%,
+    #0b0d10 60%
+  );
+  color: var(--text-primary);
+}
+
+/* -------- App Layout -------- */
+.app-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+}
+
+/* -------- Header -------- */
+.header {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.tagline {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* -------- Input Card -------- */
+.input-card {
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 40px;
+}
+
+.input-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 220px;
+  resize: vertical;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+textarea::placeholder {
+  color: #7a8391;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* -------- Buttons -------- */
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    #7df5d4
+  );
+  color: #0b0d10;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(108, 242, 194, 0.25);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+/* -------- Results -------- */
+.results {
+  display: grid;
+  gap: 20px;
+}
+
+/* -------- Collapsible Sections -------- */
+details {
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+summary::after {
+  content: "▾";
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.section-content {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+.section-content ul {
+  padding-left: 18px;
+  margin: 10px 0 0;
+}
+
+.section-content li {
+  margin-bottom: 6px;
+}
+
+/* -------- Muted Text -------- */
+.muted {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* -------- Copy Button -------- */
+.section-content button {
+  margin-top: 12px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.section-content button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
