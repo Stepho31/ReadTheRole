@@ -12,22 +12,35 @@
   <main class="app-shell">
     <header class="header">
       <h1>ReadTheRole</h1>
-      <p class="tagline">Read between the lines of job descriptions.</p>
+      <p class="tagline">
+        Decode the role. Measure your fit. Prepare with clarity.
+      </p>
     </header>
 
     <section class="input-card">
-      <label for="jdInput" class="input-label">
-        Job Description
-      </label>
-
+      
+      <!-- Job Description -->
+      <label class="input-label">Job Description</label>
       <textarea
         id="jdInput"
-        placeholder="Paste a job description here…"
+        placeholder="Paste the job description here…"
       ></textarea>
+
+      <!-- Resume Upload -->
+      <label class="input-label">
+        Upload Resume (PDF – Optional but Recommended)
+      </label>
+      <input
+        type="file"
+        id="resumeInput"
+        accept="application/pdf"
+        class="file-input"
+      />
 
       <button class="primary-btn" onclick="analyze()">
         Analyze Role
       </button>
+
     </section>
 
     <section id="results" class="results"></section>
